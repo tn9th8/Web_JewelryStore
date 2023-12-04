@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jewelry Store</title>
+    <link
+      rel="shortcut icon"
+      th:href="@{/images/logo.png}"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" th:href="@{/css/index.css}" />
+    <link rel="stylesheet" th:href="@{/css/slider.css}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--
+    - HEADER
+  -->
+    <header
+      style="margin-bottom: 50px"
+      th:replace="site/fragments/header:: header"
+    ></header>
+    <div th:replace="site/fragments/slider:: slider"></div>
+    <!--
+      - PRODUCT
+    -->
+    <div class="product-container" style="margin-top: 100px">
+      <div class="container">
+        <!-- 
+          Menu category
+         -->
+        <div th:replace="site/fragments/nav:: nav"></div>
+        <div class="product-box">
+          <!--
+            - PRODUCT GRID
+          -->
+          <div class="product-main" layout:fragment="content"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer th:replace="site/fragments/footer:: footer"></footer>
+
+    <script th:src="@{/js/index.js}"></script>
+    <script th:src="@{/js/slider.js}"></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+  <head> </head>
+
+  <body>
+    <header style="margin-bottom: 0px" th:fragment="header">
+      <div class="header-main">
+        <div class="container">
+          <a href="/" class="header-logo">
+            <img
+              th:src="@{/images/logo.png}"
+              alt="DB's logo"
+              width="100"
+              height="100"
+            />
+          </a>
+
+          <div class="header-search-container">
+            <form th:action="@{/searchByName}">
+              <input
+                type="search"
+                name="name"
+                class="search-field"
+                placeholder="Enter your product name..."
+              />
+              <button class="search-btn">
+                <ion-icon name="search-outline"></ion-icon>
+              </button>
+            </form>
+          </div>
+
+          <div class="header-user-actions">
+            <button class="action-btn" id="action-btn-account">
+              <ion-icon name="person-outline"></ion-icon>
+            </button>
+            <script>
+              const actionBtnAccount =
+                document.getElementById("action-btn-account");
+              actionBtnAccount.addEventListener("click", () => {
+                window.location.href = "/account";
+              });
+            </script>
+
+            <button class="action-btn" id="action-btn-cart">
+              <ion-icon name="bag-handle-outline"></ion-icon>
+              <span class="count">[[${count}]]</span>
+            </button>
+            <script>
+              const actionBtnCart = document.getElementById("action-btn-cart");
+              actionBtnCart.addEventListener("click", () => {
+                window.location.href = "/order";
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>
