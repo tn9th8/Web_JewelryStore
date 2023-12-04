@@ -161,8 +161,6 @@
 				https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
-				<!-- <version>3.1.0</version> -->
-				<version>3.1.0</version>
 			</plugin>
 		</plugins>
 	</build>
